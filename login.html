@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="login" method="POST">
+    {% csrf_token %}
+<div class="col-md-3">
+  <div class="form-group">
+    <p>Username</p>
+    <input  type="text" name="username" placeholder="Username" class="form-control" >
+  </div>
+  <div class="form-group">
+    <label>password</label>
+    <input type="password" name="password" placeholder="password" class="form-control" >
+  </div>
+
+  <button type="submit" class="btn btn-warning">Login</button>
+</div>
+
+</form>
+<div>
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+</div><p>have account<a href="{% url 'register' %}"> <button type="submit" class="btn btn-warning">Register</button></a></p>
+<a href="{% url 'password_reset' %}">Forget your password
+       </a>
+
+
+{% endblock %}
+
+
+
+
+    <input type="text" name="username" placeholder="Username"><br>
+    <input type="password" name="password" placeholder="passsword"><br>
+
+    <input type="Submit">

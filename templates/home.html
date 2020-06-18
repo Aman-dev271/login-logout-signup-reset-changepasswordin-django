@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} Home{% endblock %}
+
+{% block content %}
+<h2>Home Page</h2>
+{% csrf_token %}
+
+
+<p>hello welcome :{% if user.is_authenticated %}{{user.username}}{% else %} visitor ! {% endif %}</p>
+
+<strong> our user is :</strong>{{ user }}
+
+{% endblock %}

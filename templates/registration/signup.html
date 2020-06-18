@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} Signup{% endblock %}
+
+{% block content %}
+<h2>Sign up Page</h2>
+<form method="post" >
+    {% csrf_token %}
+    <h4>Enter Your Email</h4>
+    <input type="email",name = "email" placeholder="Enter you email"></input>
+    <h4>F_name</h4>
+    <input type="text",name = "F_name" placeholder="Enter your F_name"></input>
+    <h4>L_name</h4>
+    <input type="text",name = "L_name" placeholder="Enter your L_name"</input>
+
+    {{ form.as_p }}
+
+
+    <button type="submit" name="submit">Signup</button>
+</form>
+
+{% endblock %}
